@@ -7,7 +7,8 @@
     "start0": "webpack --config ./webpack.config.js",
     "start1": "webpack --config ./webpack.config1.js",
     "start2": "webpack --config ./webpack.config2.js",
-    "start": "yarn start0 & yarn start1 & yarn start2"
+    "start3": "webpack --config ./webpack.config3.js",
+    "start": "yarn start0 & yarn start1 & yarn start2 & yarn start3"
   },
   "author": "",
   "license": "ISC",

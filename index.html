@@ -2,7 +2,7 @@
  * @Author: wandouni
  * @Date: 2022-04-03 23:49:17
  * @LastEditors: wandouni
- * @LastEditTime: 2022-04-03 23:50:43
+ * @LastEditTime: 2022-04-05 00:09:39
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -14,8 +14,30 @@
   </head>
   <body>
     <script type="module">
-      import a from "./a.js";
-      console.log(a);
+      // import a from "./a.js";
+      // console.log(a);
+
+      (() => {
+        "use strict";
+        var r = {
+            457: (r) => {
+              // 4 将foo函数挂载在外层p.exports对象上
+              r.exports = { foo: () => 1 };
+            },
+          },
+          t = {};
+        !(function o(e) {
+          // 1 判断是否有缓存
+          var s = t[e];
+          if (void 0 !== s) return s.exports;
+          // 2 添加缓存，定义空exports对象
+          var p = (t[e] = { exports: {} });
+          // 3 执行r[457]
+          // 5 返回p.exports 即{ foo: () => 1 }
+          return r[e](p, p.exports, o), p.exports;
+          // 6 执行
+        })(457)();
+      })();
     </script>
   </body>
 </html>
